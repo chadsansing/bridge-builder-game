@@ -1,4 +1,53 @@
+body {
+  margin-left: 25px;
+}
+
+h1 {
+  margin: 0;
+}
+
 .user-input {
+  color: #fff;
   position: absolute;
   bottom: 1em;
+}
+
+#pit-of-despair {
+  background-color: #f00;
+  position: absolute;
+  left:30%;
+  bottom:0;
+  height: 175px;
+  width: 15%;
+  z-index:-999;
+  animation: color 3s infinite linear;
+}
+
+#left-hand-land {
+  background-color: #000;
+  position: absolute;
+  left:0;
+  bottom:0;
+  height: 250px;
+  width: 30%;
+  z-index:-999;
+}
+
+#right-hand-land {
+  background-color: #000;
+  position: absolute;
+  left:45%;
+  bottom:0;
+  height: 250px;
+  width: 55%;
+  z-index:-999;
+}
+
+@keyframes color {
+	0%   { background: #D91914; }
+	20%  { background: #E3190D; }
+	40%  { background: #ED200F; }
+	60%  { background: #FF3012; }
+	80%  { background: #E32219; }
+	100% { background: #D91914; }
 }
