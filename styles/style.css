@@ -20,7 +20,7 @@ h1 {
   height: 175px;
   width: 15%;
   z-index:-999;
-  animation: color 3s infinite linear;
+  animation: color 4s infinite linear;
 }
 
 #left-hand-land {
@@ -44,10 +44,10 @@ h1 {
 }
 
 @keyframes color {
-	0%   { background: #D91914; }
-	20%  { background: #E3190D; }
-	40%  { background: #ED200F; }
-	60%  { background: #FF3012; }
-	80%  { background: #E32219; }
-	100% { background: #D91914; }
+	0%   { background: #C81318; }
+	20%  { background: #E32219; }
+	40%  { background: #F12703; }
+  60%   { background: #FE380B; }
+  80%   { background: #F12114; }
+  100%   { background: #C81318; }
 }
