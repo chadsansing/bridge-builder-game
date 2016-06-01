@@ -19,12 +19,18 @@
   
   <h1 class="banner">Bridge Builder</h1>
   
+  <div id="left-hand-land"></div>
+  
+  <div id="pit-of-despair"></div>
+  
+  <div id="right-hand-land"></div>
+  
   <form class="user-input">
-    <p>x-pos (left): <input type="text" id="block-x-pos"><br>
-    y-pos (top): <input type="text" id="block-y-pos"><br>
+    <p>x-pos (left): <input type="text" id="block-x"><br>
+    y-pos (top): <input type="text" id="block-y"><br>
     height: <input type="text" id="block-height"><br>
     width: <input type="text" id="block-width"></p>
-    <p><button id="block-maker" onClick="makeBlock()">Bridge it!</button></p>
+    <p><button id="block-maker" onClick="makeBlock(); return false;">Bridge it!</button></p>
   </form>
     
 </body>
