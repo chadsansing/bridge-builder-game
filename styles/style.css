@@ -1,23 +1,33 @@
-body {
-  margin-left: 25px;
-}
-
 h1 {
-  margin: 0;
+  margin-left: 25px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .user-input {
   color: #fff;
   position: absolute;
   bottom: 1em;
+  margin-left: 25px;
+}
+
+#player {
+  background-color: #FF00D4;
+  position: absolute;
+  left: 10%;
+  top: 534px;
+  height:16px;
+  width:16px;
+  animation:;
+  animation-fill-mode: forwards;
 }
 
 #pit-of-despair {
   background-color: #f00;
   position: absolute;
   left:30%;
-  bottom:0;
-  height: 175px;
+  top:600px;
+  height: 100%;
   width: 15%;
   z-index:-999;
   animation: color 4s infinite linear;
@@ -27,8 +37,8 @@ h1 {
   background-color: #000;
   position: absolute;
   left:0;
-  bottom:0;
-  height: 250px;
+  top:550px;
+  height: 100%;
   width: 30%;
   z-index:-999;
 }
@@ -37,8 +47,8 @@ h1 {
   background-color: #000;
   position: absolute;
   left:45%;
-  bottom:0;
-  height: 250px;
+  top: 550px;
+  height: 100%;
   width: 55%;
   z-index:-999;
 }
@@ -50,4 +60,13 @@ h1 {
   60%   { background: #FE380B; }
   80%   { background: #F12114; }
   100%   { background: #C81318; }
+}
+
+@keyframes runaway {
+  0% { left: 10%; }
+  20% { left: 20%; }
+  40% { left: 40%; }
+  60% { left: 60%; }
+  80% { left: 80%; }
+  100% { left: 90%; }
 }
