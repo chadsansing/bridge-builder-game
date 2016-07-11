@@ -3,7 +3,6 @@ h1 {
   margin-bottom: 0;
   margin-top: 0;
 }
-
 .user-input {
   color: #fff;
   position: absolute;
@@ -51,6 +50,24 @@ h1 {
   height: 100%;
   width: 55%;
   z-index:-999;
+}
+
+#castle {
+  background-color: #ffd700;
+  position: absolute;
+  left:700px;
+  top: 450px;
+  height: 100px;
+  width: 200px;
+  z-index:-999;
+}
+
+#go-button {
+  margin-left: 25px;
+}
+
+#reset-button {
+  margin-;eft: 5px;
 }
 
 @keyframes color {
