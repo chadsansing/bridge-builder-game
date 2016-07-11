@@ -10,6 +10,13 @@ $(document).ready(function() {
     train.reset();
     console.log("I went back.");  
   });
+  makeBridge();
+  $("#block-maker").on("click", function() {
+    bridge.start(); 
+    bridge.makeBridge();
+    console.log("I made a bridge");
+    return false;
+  });
 });
 
 function move() {
@@ -36,7 +43,6 @@ var train = {
   
   move: function() {
     this.xPos = this.xPos + this.xVel;
-    console.log(this.xPos);
     if (this.xPos > 800) {
       $("#player").css("left", 800); 
     }
@@ -52,4 +58,48 @@ var train = {
     $("#player").css("left", 0);
   }
 }
+
+function makeBridge() {
+  bridge.makeBridge();
+}
+
+var bridge = {
+  bridgeX: 0,
+  bridgeY: 0,
+  bridgeHeight: 0,
+  bridgeWidth: 0,
+  
+  start: function() {
+    this.bridgeX = document.getElementById("block-x").value + "px";
+    this.bridgeY = document.getElementById("block-y").value + "px";
+    this.bridgeHeight = document.getElementById("block-height").value;
+    this.bridgeWidth = document.getElementById("block-width").value;
+  },
+  
+  makeBridge: function() {
+    
+    $("#empty-box").css("position", "absolute");
+    $("#empty-box").css("left", this.bridgeX);
+    $("#empty-box").css("top", this.bridgeY);
+    $("#empty-box").css("height", this.bridgeHeight);
+    $("#empty-box").css("width", this.bridgeWidth);
+    $("#empty-box").css("background-color", "#8000ff");
+  }
+}
+
+// function bridgeMaker() {
+//
+//   var bridgeX, bridgeY, bridgeHeight, bridgeWidth;
+//
+//   this.bridgeX = document.getElementById("block-x").value;
+//   this.bridgeY = document.getElementById("block-y").value;
+//   this.bridgeHeight = document.getElementById("block-height").value;
+//   this.bridgeWidth = document.getElementById("block-width").value;
+//
+//   $("#empty-box").css("left", this.bridgeX);
+//   $("#empty-box").css("top", this.bridgeY);
+//   $("#empty-box").css("height", this.bridgeHeight);
+//   $("#empty-box").css("width", this.bridgeWidth);
+//   $("#empty-box").css("background-color", "#8000ff");
+// }
 

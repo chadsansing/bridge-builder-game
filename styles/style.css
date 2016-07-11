@@ -67,7 +67,10 @@ h1 {
 }
 
 #reset-button {
-  margin-;eft: 5px;
+  margin-left: 5px;
+}
+
+#empty-box{
 }
 
 @keyframes color {
