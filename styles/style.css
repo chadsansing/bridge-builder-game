@@ -1,3 +1,10 @@
+body {
+  background-image:url("../images/lava-iz-gud.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  overflow:hidden;
+}
+
 h1 {
   margin-left: 25px;
   margin-bottom: 0;
