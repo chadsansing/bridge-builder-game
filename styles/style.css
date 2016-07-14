@@ -40,22 +40,20 @@ h1 {
 }
 
 #left-hand-land {
-  background-color: #000;
-  position: absolute;
   left:0;
-  top:550px;
-  height: 100%;
   width: 30%;
-  z-index:-999;
 }
 
 #right-hand-land {
+  left:45%;
+  width: 55%;
+}
+
+.land {
   background-color: #000;
   position: absolute;
-  left:45%;
   top: 550px;
   height: 100%;
-  width: 55%;
   z-index:-999;
 }
 
@@ -77,7 +75,7 @@ h1 {
   margin-left: 5px;
 }
 
-#empty-box{
+#my-bridge {
 }
 
 @keyframes color {
