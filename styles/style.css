@@ -57,6 +57,10 @@ h1 {
   z-index:-999;
 }
 
+.ground {
+  
+}
+
 #castle {
   background-color: #ffd700;
   position: absolute;
@@ -76,6 +80,7 @@ h1 {
 }
 
 #my-bridge {
+  display: none;
 }
 
 @keyframes color {

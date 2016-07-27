@@ -1,24 +1,25 @@
-//What do we do with var whistleSFX = document.getElementById("train-whistle")?
-//Do we need var train, bridge?
-//How do we get the bridge to be trated like a .land?
+//How do we get the bridge to be treated like a .land?
+
+var whistleSFX;
 
 $(document).ready(function() { 
+  whistleSFX = document.getElementById("train-whistle");
   move();
   $("#go-button").on("click", function(){ 
     train.start(3); 
     train.move();
-    console.log("I go hard.");
+    // console.log("I go hard.");
   }); 
   reset();
   $("#reset-button").on("click", function() {
     train.reset();
-    console.log("I went back.");  
+    //console.log("I went back.");  
   });
   makeBridge();
   $("#block-maker").on("click", function() {
     bridge.start(); 
     bridge.makeBridge();
-    console.log("I made a bridge");
+    //console.log("I made a bridge");
     return false;
   });
 });
@@ -44,6 +45,9 @@ var train = {
   gravy: true,
     
   start: function(speed) {
+    if (this.xVel == 0 && this.xPos == 0) {
+      whistleSFX.play();
+    }
     this.xVel = speed;
   },
   
@@ -62,16 +66,21 @@ var train = {
     this.yPos = this.yPos + this.yVel;
     var that = this;
     
-    $(".land").each(function() {
+    $(".ground").each(function() {
       var land = $(this);
       var position = land.position();
       var leftEdge = position.left;
       var rightEdge = position.left + land.width();
       //console.log(leftEdge, rightEdge);
-      
+      //Checking to see if the xPos of the train is over ground.
       if(that.xPos >= leftEdge && that.xPos <= rightEdge && that.yPos >= (position.top -16)) {
-        that.yPos = position.top - 16;
-        console.log("over land");
+        if(that.yPos >= (position.top - 16)) {
+          that.yPos = position.top - 16;
+          that.yVel = 0;
+          console.log("over land");
+        }
+      } else {
+        console.log("not over land");
       }
       
     });
