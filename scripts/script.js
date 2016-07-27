@@ -1,3 +1,7 @@
+//What do we do with var whistleSFX = document.getElementById("train-whistle")?
+//Do we need var train, bridge?
+//How do we get the bridge to be trated like a .land?
+
 $(document).ready(function() { 
   move();
   $("#go-button").on("click", function(){ 
@@ -38,7 +42,7 @@ var train = {
   yVel: 0,
   gravity: .06125,
   gravy: true,
-  
+    
   start: function(speed) {
     this.xVel = speed;
   },
@@ -48,7 +52,7 @@ var train = {
     // if(this.gravy) {
     //   console.log("This gravy is dope.");
     // }
-    
+        
     this.xPos = this.xPos + this.xVel;
     if (this.xPos > 800) {
       this.hammerTime(); 
@@ -63,14 +67,18 @@ var train = {
       var position = land.position();
       var leftEdge = position.left;
       var rightEdge = position.left + land.width();
-      console.log(leftEdge, rightEdge);
+      //console.log(leftEdge, rightEdge);
       
       if(that.xPos >= leftEdge && that.xPos <= rightEdge && that.yPos >= (position.top -16)) {
         that.yPos = position.top - 16;
         console.log("over land");
       }
+      
     });
     
+    if(this.yPos > 540) {
+      this.hammerTime();
+    }
     
     $("#player").css("left", this.xPos).css("top", this.yPos);
   },
