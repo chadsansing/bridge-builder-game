@@ -9,18 +9,15 @@ $(document).ready(function() {
   $("#go-button").on("click", function(){ 
     train.start(3); 
     train.move();
-    // console.log("I go hard.");
   }); 
   reset();
   $("#reset-button").on("click", function() {
     train.reset();
-    //console.log("I went back.");  
   });
   makeBridge();
   $("#block-maker").on("click", function() {
     bridge.start(); 
     bridge.makeBridge();
-    //console.log("I made a bridge");
     return false;
   });
 });
@@ -53,10 +50,6 @@ var train = {
   },
   
   move: function() {
-    
-    // if(this.gravy) {
-    //   console.log("This gravy is dope.");
-    // }
         
     this.xPos = this.xPos + this.xVel;
     if (this.xPos > 800) {
@@ -72,16 +65,13 @@ var train = {
       var position = land.position();
       var leftEdge = position.left;
       var rightEdge = position.left + land.width();
-      //console.log(leftEdge, rightEdge);
-      //Checking to see if the xPos of the train is over ground.
+      
       if(that.xPos >= leftEdge && that.xPos <= rightEdge && that.yPos >= (position.top -16)) {
         if(that.yPos >= (position.top - 16)) {
           that.yPos = position.top - 16;
           that.yVel = 0;
-          console.log("over land");
         }
       } else {
-        console.log("not over land");
       }
       
     });
@@ -110,26 +100,29 @@ function makeBridge() {
 }
 
 var bridge = {
-  bridgeX: 0,
-  bridgeY: 0,
-  bridgeHeight: 0,
-  bridgeWidth: 0,
+  x: 0,
+  y: 0,
+  height: 0,
+  width: 0,
   
   start: function() {
-    this.bridgeX = document.getElementById("block-x").value + "px";
-    this.bridgeY = document.getElementById("block-y").value + "px";
-    this.bridgeHeight = document.getElementById("block-height").value;
-    this.bridgeWidth = document.getElementById("block-width").value;
+    this.x = document.getElementById("block-x").value + "px";
+    this.y = document.getElementById("block-y").value + "px";
+    this.height = document.getElementById("block-height").value;
+    this.width = document.getElementById("block-width").value;
+    console.log(this);
   },
   
   makeBridge: function() {
     
     $("#my-bridge").css("position", "absolute");
-    $("#my-bridge").css("left", this.bridgeX);
-    $("#my-bridge").css("top", this.bridgeY);
-    $("#my-bridge").css("height", this.bridgeHeight);
-    $("#my-bridge").css("width", this.bridgeWidth);
+    $("#my-bridge").css("left", this.x);
+    $("#my-bridge").css("top", this.y);
+    $("#my-bridge").css("height", this.height);
+    $("#my-bridge").css("width", this.width);
     $("#my-bridge").css("background-color", "#8000ff");
+    $("#my-bridge").css("display", "block");
+    console.log("hey now");
   }
 }
 
