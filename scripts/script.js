@@ -65,13 +65,12 @@ var train = {
       var position = land.position();
       var leftEdge = position.left;
       var rightEdge = position.left + land.width();
+      var topEdge = position.top - 16;
+      var bottomEdge = position.top + land.height();
       
-      if(that.xPos >= leftEdge && that.xPos <= rightEdge && that.yPos >= (position.top -16)) {
-        if(that.yPos >= (position.top - 16)) {
+      if(that.xPos >= leftEdge && that.xPos <= rightEdge && that.yPos >= topEdge && that.yPos <= bottomEdge) {
           that.yPos = position.top - 16;
           that.yVel = 0;
-        }
-      } else {
       }
       
     });
